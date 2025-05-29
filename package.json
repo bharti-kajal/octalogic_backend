@@ -1,0 +1,37 @@
+{
+  "name": "vehicle_booking",
+  "version": "1.0.0",
+  "description": "Vehicle Booking NODE, MYSQL, ORM, Sequalize",
+  "keywords": [
+    "NODE",
+    "MYSQL",
+    "EXPRESS",
+    "ORM",
+    "Vehicle",
+    "Booking"
+  ],
+  "homepage": "https://github.com/bharti-kajal/octalogic_backend#readme",
+  "bugs": {
+    "url": "https://github.com/bharti-kajal/octalogic_backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharti-kajal/octalogic_backend.git"
+  },
+  "license": "ISC",
+  "author": "Kajal Bharti",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {}
+}
