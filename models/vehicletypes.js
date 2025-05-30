@@ -1,7 +1,6 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model } from 'sequelize';
 
-export default (sequelize) => {
-  
+export default (sequelize, DataTypes) => {
   class VehicleTypes extends Model {
     static associate(models) {
     }
