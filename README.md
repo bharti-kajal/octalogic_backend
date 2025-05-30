@@ -40,5 +40,7 @@ Octalogic_backend/
 ## Getting Started
 ```bash
 npm install
+npm run migrate
+npm run seed
 npm start
 
