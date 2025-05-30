@@ -15,8 +15,11 @@ export const up = async (queryInterface, Sequelize) => {
       },
       onDelete: 'CASCADE',
     },
-    start_time: Sequelize.DATE,
-    end_time: Sequelize.DATE,
+    first_name: Sequelize.STRING,
+    last_name: Sequelize.STRING,
+    no_of_wheel: Sequelize.INTEGER,
+    start_date: Sequelize.DATE,
+    end_date: Sequelize.DATE,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE,
   });

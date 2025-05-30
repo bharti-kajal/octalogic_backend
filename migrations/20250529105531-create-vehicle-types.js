@@ -10,7 +10,7 @@ export default {
         allowNull: false,
       },
       category: {
-        type: Sequelize.ENUM('car', 'bike'),
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       name: {

@@ -1,12 +1,12 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes } from "sequelize";
 
 export default (sequelize) => {
   class Bookings extends Model {
     static associate(models) {
       Bookings.belongsTo(models.Vehicles, {
-        foreignKey: 'vehicle_id',
-        as: 'vehicle',
-        onDelete: 'CASCADE',
+        foreignKey: "vehicle_id",
+        as: "vehicle",
+        onDelete: "CASCADE",
       });
     }
   }
@@ -23,19 +23,31 @@ export default (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      start_time: {
+      first_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      no_of_wheel: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      start_date: {
         type: DataTypes.DATE,
         allowNull: true,
       },
-      end_time: {
+      end_date: {
         type: DataTypes.DATE,
         allowNull: true,
-      },
+      }
     },
     {
       sequelize,
-      modelName: 'Bookings',
-      tableName: 'bookings',
+      modelName: "Bookings",
+      tableName: "bookings",
       timestamps: true,
     }
   );

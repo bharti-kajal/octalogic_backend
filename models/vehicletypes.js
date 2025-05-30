@@ -15,7 +15,7 @@ export default (sequelize, DataTypes) => {
         allowNull: false,
       },
       category: {
-        type: DataTypes.ENUM('car', 'bike'),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       name: {
