@@ -1,8 +1,20 @@
 import express from 'express';
 import router from './modules/vehicles/vehicle.routes.js';
+import cors from 'cors';
 
 const port = 3200;
 const server = express();
+
+const corsOptions = {
+    origin: "http://localhost:3000",
+    methods: "GET,POST",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true
+};
+
+// Apply CORS middleware before routes
+server.use(cors(corsOptions));
 
 server.use(express.json());
 
@@ -16,7 +28,6 @@ server.use("/api", (req, res, next) => {
         message: "API endpoint not found"
     });
 });
-
 
 // Listen Server on port
 server.listen(port, () => {
