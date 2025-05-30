@@ -1,7 +1,7 @@
 import express from 'express';
 import router from './modules/vehicles/vehicle.routes.js';
 import cors from 'cors';
-
+import { connectToDB } from './models/index.js';
 const port = 3200;
 const server = express();
 
@@ -32,4 +32,5 @@ server.use("/api", (req, res, next) => {
 // Listen Server on port
 server.listen(port, () => {
     console.log("Server is up and running on Port:", port);
+    connectToDB();
 });

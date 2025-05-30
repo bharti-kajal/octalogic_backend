@@ -60,7 +60,7 @@ class VehicleController {
         end_date,
       } = req.body;
 
-      // === VALIDATIONS ===
+      // VALIDATIONS 
       if (
         !vehicle_id ||
         !first_name ||
@@ -93,7 +93,7 @@ class VehicleController {
         });
       }
 
-      // === VEHICLE EXISTENCE CHECK ===
+      //  VEHICLE EXISTENCE CHECK 
       const vehicle = await db.Vehicles.findOne({
         where: { id: vehicle_id },
       });
@@ -105,7 +105,7 @@ class VehicleController {
         });
       }
 
-      // === OVERLAP CHECK ===
+      // OVERLAP CHECK
       const { Op } = db.Sequelize;
       const overlappingBooking = await db.Bookings.findOne({
         where: {
@@ -124,13 +124,13 @@ class VehicleController {
       });
 
       if (overlappingBooking) {
-        return res.status(409).json({
+        return res.status(400).json({
           success: false,
           message: "Vehicle is already booked for the selected date range",
         });
       }
 
-      // === CREATE BOOKING ===
+      //CREATE BOOKING 
       const newBooking = await db.Bookings.create({
         vehicle_id,
         first_name,

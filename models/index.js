@@ -52,4 +52,14 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+export const connectToDB = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('DB connected successfully');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error.message);
+    process.exit(1);
+  }
+};
+
 export default db;
